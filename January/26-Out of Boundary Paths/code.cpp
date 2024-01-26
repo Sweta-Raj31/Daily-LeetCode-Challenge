@@ -30,3 +30,5 @@ public:
         return totalWays(startRow,startColumn,0,maxMove,m,n,memo);
     }
 };
+// Time Complexity due to recursion is o(m*n*maxMoves)
+// Space Complexity O(m*n*maxMoves) 
