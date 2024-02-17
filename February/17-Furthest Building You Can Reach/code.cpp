@@ -36,3 +36,37 @@ int furthestBuildingSolve(vector<int>& heights, int bricks, int ladders,int inde
 };
 
 // it is giveing mle due to constraint we need greedy appraoch
+
+class Solution {
+public:
+    int furthestBuilding(vector<int>& heights, int bricks, int ladders) {
+       priority_queue<int>bricksUsedEarlier;
+       int stepSize=0;
+       int i=0;
+       for(;i<heights.size()-1;i++) 
+       {
+         stepSize=heights[i+1]-heights[i];
+         if(stepSize<=0) continue;
+         if(stepSize<=bricks)
+         {
+             bricks=bricks-stepSize;
+             bricksUsedEarlier.push(stepSize);
+
+         }
+        else if(ladders>0)
+        {
+            if(bricksUsedEarlier.size() && bricksUsedEarlier.top()>stepSize)
+            {
+                //use ladder instaed of brcicks
+                bricks=bricks+bricksUsedEarlier.top();
+                bricksUsedEarlier.pop();
+                 bricks=bricks-stepSize;
+                 bricksUsedEarlier.push(stepSize);
+            }
+            ladders--;
+        } 
+        else break;
+       }
+       return i;
+    }
+};
