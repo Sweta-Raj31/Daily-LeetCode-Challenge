@@ -1,5 +1,5 @@
 
-Length of Last Word
+//Length of Last Word
 class Solution {
 public:
     int lengthOfLastWord(string s) {
