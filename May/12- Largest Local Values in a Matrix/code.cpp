@@ -25,3 +25,12 @@ public:
         
     }
 };
+
+
+// Time complexity is O(9*(n-2)^2) -->>> O(n^2)
+//space complexity is O((n-2)^2)->>>O(n^2)
+
+
+// show the logic of this question is check every 3 *3 matrix and search for the max number in that matrix and that will be the first element of ans matrix 
+// so what we have done is first be will start the matrix from from 0 to n-3 size because we needed 3*3 matrix at time of declare row we declare a temp vector for
+// storing the row vector then double for loop for all the 3*3 matrix and store in maxi the max value then in temp then in ans;
